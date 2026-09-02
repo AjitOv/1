@@ -266,7 +266,9 @@ class LocalRenderer:
     def __init__(self, settings: Settings):
         self.settings = settings
         self.ff = ffmpeg_exe()
-        self.font = os.environ.get("OTD_CAPTION_FONT", "DejaVu Sans")
+        import sys
+        default_font = "Helvetica Neue" if sys.platform == "darwin" else ("Arial" if sys.platform == "win32" else "DejaVu Sans")
+        self.font = os.environ.get("OTD_CAPTION_FONT", default_font)
         self.work = settings.data_dir / "work"
         self.work.mkdir(parents=True, exist_ok=True)
 

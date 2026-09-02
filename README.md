@@ -39,7 +39,14 @@ re-run (`--retry` re-attempts failed renders).
 
 ## Quick start
 
+macOS: `git clone https://github.com/AjitOv/1.git otd-shorts && cd otd-shorts && bash scripts/setup_mac.sh`
+(installs Homebrew if missing, Python 3, ffmpeg, a virtualenv and the requirements). Then
+`source .venv/bin/activate` in every new terminal.
+
+Other systems:
+
 ```bash
+python3 -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
 cp .env.example .env            # fill in keys, then `export $(cat .env | xargs)`
 python -m otd_shorts.cli plan --date tomorrow          # writes 44 jobs + scripts
