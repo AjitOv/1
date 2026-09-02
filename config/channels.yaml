@@ -1,0 +1,108 @@
+# 11 channels. Every channel gets its own angle so the 44 daily videos are not
+# near-duplicates of each other (YouTube treats mass-posted repetitive content
+# across channels as spam and can terminate all of them together).
+#
+# Fill youtube_channel_id after running `python -m otd_shorts.cli auth <key>`.
+# token_file lives in OTD_SECRETS_DIR. oauth_client is the Google OAuth "Desktop"
+# client JSON for the GCP project this channel uploads through (see README on quota).
+#
+# Posting slots are local times in brand.timezone. Each video is uploaded as
+# private with publishAt set to its slot, so YouTube releases it on schedule.
+defaults:
+  slots: ["08:00", "12:30", "17:00", "21:00"]
+  oauth_client: client_secret.json
+  engine: avatar_iv
+  resolution: 720p
+  captions: true
+
+channels:
+  - key: otd_system
+    name: OTD System
+    pillar: system
+    persona: "the coach who explains the OTD System itself: process, rules, routine"
+    avatar_id: f942dfea6af34790acbafbced2448617   # digital twin, portrait
+    avatar_type: avatar
+    voice_id: 21f2bae9535f4f75bd67e12ece4aa8e4
+    token_file: yt_otd_system.json
+    youtube_channel_id: ""
+  - key: price_action
+    name: Price Action Lab
+    pillar: price_action
+    persona: "a chart reader who talks structure, levels and candles, never indicators"
+    avatar_id: cf9eb0b6e655427c9f4d2574678903dc   # photo avatar, desk
+    voice_id: 8892ab55d1d84e87b2253c2920b1334c
+    token_file: yt_price_action.json
+    youtube_channel_id: ""
+  - key: risk_desk
+    name: Risk Desk
+    pillar: risk
+    persona: "a calm risk manager obsessed with position sizing and survival"
+    avatar_id: c259705b0e3b42bb9613e843641365e9
+    voice_id: 8892ab55d1d84e87b2253c2920b1334c
+    token_file: yt_risk_desk.json
+    youtube_channel_id: ""
+  - key: trader_mind
+    name: Trader Mind
+    pillar: psychology
+    persona: "a trading psychology coach who talks about discipline, tilt and habits"
+    avatar_id: ce518d6a81e94afeb788fdcf087f5585
+    voice_id: 8892ab55d1d84e87b2253c2920b1334c
+    token_file: yt_trader_mind.json
+    youtube_channel_id: ""
+  - key: options_simplified
+    name: Options Simplified
+    pillar: options
+    persona: "a teacher who makes options simple for beginners with plain examples"
+    avatar_id: 574c086dcb114587a99ab6d73198bf08
+    voice_id: 8892ab55d1d84e87b2253c2920b1334c
+    token_file: yt_options_simplified.json
+    youtube_channel_id: ""
+  - key: intraday_edge
+    name: Intraday Edge
+    pillar: intraday
+    persona: "a day trader who shares opening-range, timing and execution tips"
+    avatar_id: c58d2b0a32654558a54084b470a74e85
+    voice_id: 8892ab55d1d84e87b2253c2920b1334c
+    token_file: yt_intraday_edge.json
+    youtube_channel_id: ""
+  - key: swing_setups
+    name: Swing Setups
+    pillar: swing
+    persona: "a swing trader who holds days to weeks and rides trends patiently"
+    avatar_id: 6a823e2bdc1141feb5d3f6a96f860ad4
+    voice_id: 8892ab55d1d84e87b2253c2920b1334c
+    token_file: yt_swing_setups.json
+    youtube_channel_id: ""
+  - key: wealth_compounding
+    name: Wealth Compounding
+    pillar: investing
+    persona: "a long-term investor who talks compounding, valuation and patience"
+    avatar_id: 1c234e6a18a248ae96a608b19c6c544c
+    voice_id: 8892ab55d1d84e87b2253c2920b1334c
+    token_file: yt_wealth_compounding.json
+    youtube_channel_id: ""
+  - key: beginner_mistakes
+    name: Beginner Trader Mistakes
+    pillar: mistakes
+    persona: "a blunt mentor who calls out the mistakes that blow up new accounts"
+    avatar_id: cf9eb0b6e655427c9f4d2574678903dc
+    voice_id: 8892ab55d1d84e87b2253c2920b1334c
+    token_file: yt_beginner_mistakes.json
+    youtube_channel_id: ""
+  - key: market_lessons
+    name: Market Lessons
+    pillar: history
+    persona: "a storyteller who pulls timeless lessons from famous market events"
+    avatar_id: ce518d6a81e94afeb788fdcf087f5585
+    voice_id: 8892ab55d1d84e87b2253c2920b1334c
+    token_file: yt_market_lessons.json
+    youtube_channel_id: ""
+  - key: trader_routine
+    name: Trader Routine
+    pillar: routine
+    persona: "a systematic trader who shares daily routines, checklists and tools"
+    avatar_id: f942dfea6af34790acbafbced2448617
+    avatar_type: avatar
+    voice_id: 21f2bae9535f4f75bd67e12ece4aa8e4
+    token_file: yt_trader_routine.json
+    youtube_channel_id: ""

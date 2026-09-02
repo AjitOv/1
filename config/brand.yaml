@@ -1,0 +1,46 @@
+# Brand + offer used in every script, title and description.
+name: OTD System
+site: otdsystem.com
+url: https://otdsystem.com
+course_name: OTD System Trading & Investing Course
+price_display: "$5,999"
+coach_name: Ajit
+timezone: Asia/Kolkata
+
+# Call-to-action lines. One is picked per video so the closers are not identical across channels.
+ctas:
+  - "If you want the full system I trade with, it's at otdsystem dot com."
+  - "The complete playbook is inside the OTD System course. Link is in the description."
+  - "I teach the whole process step by step at otdsystem dot com. Link below."
+  - "Want the full framework, not just the tip? Check otdsystem dot com."
+  - "This is one piece of the OTD System. The full course is linked in the description."
+  - "Grab the full OTD System course from the link in the description."
+
+# Appended to every description. Keep it: financial content on YouTube needs it,
+# and it protects you against "misleading claims" strikes.
+disclaimer: |
+  Educational content only. Not financial or investment advice. Trading and investing involve
+  significant risk of loss, including the loss of your entire capital. Past performance does not
+  guarantee future results. Do your own research and consult a licensed professional.
+
+# Phrases that must never appear in a script, title or description.
+banned_phrases:
+  - guaranteed
+  - guarantee
+  - risk-free
+  - risk free
+  - can't lose
+  - cannot lose
+  - "100% win"
+  - get rich
+  - double your money
+  - sure shot
+  - no risk
+  - passive income guaranteed
+
+hashtags:
+  - "#Shorts"
+  - "#Trading"
+  - "#Investing"
+  - "#StockMarket"
+  - "#OTDSystem"

@@ -1,0 +1,542 @@
+# Topic bank. Each pillar maps to one channel. Every topic carries the raw material
+# the script engine needs: a lesson, an example, and the mistake people make.
+# Formats (in scripts.py) turn each topic into several distinct videos.
+system:
+  - title: Why a trading system beats trading on feelings
+    lesson: A system tells you exactly when to enter, where to exit and how much to risk before the market opens.
+    example: On a red day a system trader follows the plan while a gut trader freezes or revenge trades.
+    mistake: Trading whatever looks good in the moment with no written rules.
+  - title: The three parts every trading system needs
+    lesson: Setup, risk and management. If any one is missing you do not have a system, you have a hope.
+    example: A breakout setup with a fixed one percent risk and a trailing stop is a complete system.
+    mistake: Having an entry idea and calling it a strategy.
+  - title: How I backtest a rule before I trust it
+    lesson: Take one rule, go back through at least a hundred charts, log every result and only then trade it small.
+    example: One hundred samples of a pullback entry tell you the real win rate, not the last five trades.
+    mistake: Trading a setup live after seeing it work twice on social media.
+  - title: What "edge" actually means
+    lesson: Edge is a positive expectancy over many trades, not a high win rate.
+    example: A forty percent win rate with three to one reward to risk is a strong edge.
+    mistake: Chasing a ninety percent win rate strategy that loses everything on the tenth trade.
+  - title: Why I never change my rules mid-week
+    lesson: Rules only get reviewed on a fixed day with data, never during a losing streak.
+    example: I review my journal every Sunday and change at most one rule at a time.
+    mistake: Rewriting the plan after every loss.
+  - title: One setup, mastered, beats ten setups
+    lesson: Depth on one pattern gives you pattern recognition that breadth never will.
+    example: Trade only the pullback for ninety days and you will see it forming before it forms.
+    mistake: Collecting strategies instead of executing one.
+  - title: The difference between a good trade and a winning trade
+    lesson: A good trade follows every rule regardless of outcome. Grade the process, not the result.
+    example: A stopped-out trade taken by the rules is a good trade. A lucky gamble is still a bad trade.
+    mistake: Feeling good after profitable gambles and bad after disciplined losses.
+  - title: How to size a system to your account
+    lesson: Decide risk per trade as a fixed percent, then let the stop distance set your quantity.
+    example: One percent of ten thousand is one hundred. If the stop is two points away, you trade fifty units.
+    mistake: Buying a fixed number of shares no matter where the stop sits.
+  - title: The weekly review that improves you fastest
+    lesson: Tag every trade by setup and by mistake, then fix the most expensive mistake first.
+    example: If early exits cost you more than bad entries, work on holding, not on entries.
+    mistake: Reviewing only profit and loss instead of the reasons behind it.
+  - title: Expectancy in one sentence
+    lesson: Average win times win rate minus average loss times loss rate. Positive means keep going.
+    example: Win sixty on half your trades, lose forty on the other half, and you earn ten per trade on average.
+    mistake: Judging a strategy on a single week.
+  - title: Why consistency comes before size
+    lesson: Prove the process on small size for a fixed number of trades before increasing risk.
+    example: Fifty rule-following trades at minimum size earns the right to size up.
+    mistake: Sizing up right after a big winner.
+  - title: The one question I ask before every entry
+    lesson: Is this trade in my plan, yes or no. Anything that needs a story is a no.
+    example: A stock gapping up on news is not in the plan, so it is not a trade, however tempting.
+    mistake: Talking yourself into trades outside the system.
+price_action:
+  - title: Support and resistance are zones, not lines
+    lesson: Price reacts around an area, so mark zones and wait for a reaction instead of a perfect touch.
+    example: A stock bouncing three times between ninety-eight and one hundred has a zone, not a level.
+    mistake: Placing stops exactly at a round number where everyone else does.
+  - title: The only candle pattern I care about
+    lesson: A rejection wick at a key level tells you who lost the fight at that price.
+    example: A long lower wick at support after a sell-off shows buyers stepped in with force.
+    mistake: Memorising fifty candle names and trading them in the middle of nowhere.
+  - title: Market structure in thirty seconds
+    lesson: Higher highs and higher lows are an uptrend. The trend changes only when that sequence breaks.
+    example: When price fails to make a higher high and then breaks the last higher low, the uptrend is over.
+    mistake: Calling a reversal on one red candle.
+  - title: Why breakouts fail
+    lesson: Most breakouts fail because there is no volume and no retest. Wait for the retest to hold.
+    example: A breakout above resistance that pulls back, holds, and pushes on is the real move.
+    mistake: Buying the first candle through the level.
+  - title: Reading a pullback correctly
+    lesson: A healthy pullback is shallow, slow and on lower volume. A fast deep drop is distribution.
+    example: A three-day drift down on light volume inside an uptrend is a buying opportunity.
+    mistake: Buying every dip regardless of how it is falling.
+  - title: The power of a retest
+    lesson: Old resistance becoming new support is the cleanest confirmation you can get.
+    example: Price breaks one hundred, returns to one hundred, holds and rallies. That is your entry.
+    mistake: Chasing after the move is already extended.
+  - title: Volume tells you if the move is real
+    lesson: Price moves on rising volume have participation. Moves on falling volume run out of fuel.
+    example: A rally on the lowest volume in ten days usually reverses.
+    mistake: Ignoring volume entirely.
+  - title: Higher time frame first
+    lesson: Find the direction on the daily, find the entry on the lower time frame, never the reverse.
+    example: Daily uptrend plus a fifteen-minute pullback is a high-probability long.
+    mistake: Trading a five-minute setup against the daily trend.
+  - title: How to spot a range before it traps you
+    lesson: Two failed breakouts in both directions means the market is ranging. Trade the edges or stand aside.
+    example: Price rejecting ninety and one hundred twice each is a range until it is not.
+    mistake: Using a trend strategy in a sideways market.
+  - title: Where to put the stop on a price action trade
+    lesson: Behind the structure that proves you wrong, not at a fixed distance you can afford.
+    example: For a long off support, the stop goes below the swing low that created the support.
+    mistake: Placing stops based on how much money you want to lose.
+  - title: The fake-out that precedes the real move
+    lesson: A stop hunt through a level that snaps back inside is often the start of the opposite move.
+    example: A drop below support that recovers within minutes traps sellers and fuels the rally.
+    mistake: Panicking out on the first break instead of watching the close.
+  - title: Clean charts trade better
+    lesson: Remove the indicators, keep the levels, and your entries become obvious.
+    example: A bare chart with three horizontal lines shows the trade better than five oscillators.
+    mistake: Waiting for six indicators to agree.
+risk:
+  - title: The one percent rule
+    lesson: Risk no more than one percent of your account on any single trade so no loss can hurt you.
+    example: Ten straight losses at one percent is a ten percent drawdown, which is easy to recover from.
+    mistake: Risking twenty percent because the setup looks certain.
+  - title: Why drawdowns are asymmetric
+    lesson: A fifty percent loss needs a one hundred percent gain to get back. Protect capital first.
+    example: Lose ten percent and you need eleven percent back. Lose fifty and you need to double.
+    mistake: Thinking losses and gains are symmetric.
+  - title: Position sizing formula
+    lesson: Quantity equals risk amount divided by the distance to your stop.
+    example: Risk one hundred, stop five points away, trade twenty units. Always.
+    mistake: Trading the same size on every trade regardless of stop distance.
+  - title: Reward to risk before entry
+    lesson: If the target is not at least twice the stop distance, the trade does not exist.
+    example: Stop at two points, target at six points. Three to one. Take it.
+    mistake: Entering first and looking for a target later.
+  - title: The daily loss limit
+    lesson: Set a maximum loss per day and stop trading when you hit it, no exceptions.
+    example: Three losses in a row means the screen goes off until tomorrow.
+    mistake: Trying to win it back in the last hour.
+  - title: Never move a stop wider
+    lesson: A stop can move toward profit, never away from it. Moving it wider is not a decision, it is denial.
+    example: If you set the stop at ninety-five and price hits it, you are out. The plan already decided.
+    mistake: Widening the stop because the thesis "still makes sense".
+  - title: Correlation is hidden risk
+    lesson: Five positions in the same sector is one big position wearing five hats.
+    example: Long five tech stocks at one percent each is really five percent on tech.
+    mistake: Thinking diversification means more tickers.
+  - title: Risk of ruin in plain words
+    lesson: Small consistent risk keeps the probability of blowing up near zero. Big risk makes it certain over time.
+    example: At one percent risk a normal losing streak barely dents the account. At ten percent it ends it.
+    mistake: Believing a big bet is fine because it is just once.
+  - title: How to survive a losing streak
+    lesson: Cut size in half after three losses and go back to full size after two rule-following wins.
+    example: A losing streak at half size costs half as much and protects your confidence.
+    mistake: Doubling size to recover faster.
+  - title: Your first job is not to make money
+    lesson: Your first job is to still be here next year. Profit is what survival looks like over time.
+    example: Traders who lasted five years did so by never having a catastrophic month.
+    mistake: Measuring success by the biggest day instead of the smallest drawdown.
+  - title: Stop loss is a cost of business
+    lesson: A stop is the price you pay for information. Losses are tuition, not failure.
+    example: A shop pays rent, a trader pays stops. Both are expected expenses.
+    mistake: Taking every loss personally.
+  - title: Sizing for volatility
+    lesson: Wider stops in volatile markets mean smaller size, not bigger losses.
+    example: If the stock's daily range doubles, halve your quantity to keep risk constant.
+    mistake: Keeping quantity fixed when volatility spikes.
+psychology:
+  - title: Revenge trading explained
+    lesson: The urge to win back a loss immediately is your ego, not your edge. Walk away for ten minutes.
+    example: A trader who loses at ten and takes three unplanned trades by ten fifteen has lost the day.
+    mistake: Treating the next trade as a way to fix the last one.
+  - title: Why you exit winners too early
+    lesson: Fear of giving back profit makes you cut winners. Set the target before entry and let it hit.
+    example: A trade planned for three to one that you close at one to one has a broken expectancy.
+    mistake: Taking profit because it "feels" like enough.
+  - title: The journaling habit
+    lesson: Write down the emotion before the trade, not just the numbers. Patterns appear in a month.
+    example: You will find every impulse trade happened after a loss or a boring afternoon.
+    mistake: Logging only entry and exit price.
+  - title: FOMO is an information problem
+    lesson: You chase because you think this move is the last one. There is always another setup tomorrow.
+    example: The market has produced setups every day for a hundred years. It will tomorrow too.
+    mistake: Entering late because everyone on social media is in.
+  - title: Boredom is more dangerous than fear
+    lesson: Most bad trades happen when nothing is happening. Sitting on hands is a skill.
+    example: The best traders take two or three trades a day and watch the rest.
+    mistake: Trading to feel busy.
+  - title: Detach from the outcome
+    lesson: Judge yourself on execution. The market decides the outcome, you only decide the process.
+    example: Ten perfect executions can produce four losses. That is still a perfect day.
+    mistake: Mood swings tied to profit and loss.
+  - title: The discipline routine
+    lesson: Discipline is easier with fewer decisions. Pre-decide everything the night before.
+    example: Watchlist, levels, size and time window are set before the open. During the open you only execute.
+    mistake: Making decisions in real time under pressure.
+  - title: Confidence comes from data, not wins
+    lesson: A backtested, journaled edge gives calm confidence. A winning streak gives fragile confidence.
+    example: A trader with two hundred logged trades knows a losing week is noise.
+    mistake: Feeling like a genius after a hot week.
+  - title: How to handle a big loss
+    lesson: Stop, write down exactly what happened, cut size in half tomorrow, and restart the process.
+    example: The fastest recoveries come from slowing down, not from speeding up.
+    mistake: Trading bigger the next day.
+  - title: Hope is not a strategy
+    lesson: If you are hoping a trade comes back, you have already broken your rules. Exit.
+    example: The moment you say "it will bounce" without a plan, close it.
+    mistake: Turning a trade into an investment because it went against you.
+  - title: Screen time is not the same as skill
+    lesson: Deliberate review of your own trades builds skill faster than watching charts all day.
+    example: One hour reviewing twenty trades beats eight hours watching ticks.
+    mistake: Confusing being busy with getting better.
+  - title: The two-minute rule before entry
+    lesson: Wait two minutes after seeing a setup. If it still meets every rule, take it. Most impulses die.
+    example: Half of the trades you wanted two minutes ago no longer look good after a pause.
+    mistake: Clicking the second you feel excited.
+options:
+  - title: What an option really is
+    lesson: A call is the right to buy at a price, a put is the right to sell. You pay a premium for that right.
+    example: A one hundred call for two rupees pays off only if the stock is above one hundred two at expiry.
+    mistake: Treating options like lottery tickets.
+  - title: Why most option buyers lose
+    lesson: Time decay eats the premium every day. Buyers need speed, sellers get paid for waiting.
+    example: An option worth ten can be worth six a week later with the stock unchanged.
+    mistake: Buying far out-of-the-money options and hoping.
+  - title: Theta in plain words
+    lesson: Theta is the rent you pay each day to hold an option. It accelerates near expiry.
+    example: The last week before expiry destroys premium fastest.
+    mistake: Holding weekly options into Thursday with no move.
+  - title: Implied volatility is the price of fear
+    lesson: High implied volatility means options are expensive. Buy cheap, sell expensive, same as anything.
+    example: Before earnings, options are expensive. After the announcement, the fear leaves and premiums collapse.
+    mistake: Buying options right before an event when the premium is inflated.
+  - title: Delta explained simply
+    lesson: Delta tells you how much the option moves when the stock moves one point.
+    example: A fifty delta call gains about half a point when the stock gains a full point.
+    mistake: Expecting a cheap option to move as much as the stock.
+  - title: Selling premium is not free money
+    lesson: Option sellers win often and lose big. Position size and defined risk are everything.
+    example: Ten small wins can be erased by one undefended short option in a gap.
+    mistake: Selling naked options with no hedge.
+  - title: The spread that limits your risk
+    lesson: A vertical spread caps both profit and loss so one bad day cannot blow up the account.
+    example: Buy the one hundred call, sell the one hundred five call. Max loss is what you paid.
+    mistake: Trading naked when a spread gives the same view with defined risk.
+  - title: Expiry day is not for beginners
+    lesson: On expiry, premiums move violently and most retail traders are on the wrong side.
+    example: A ten rupee option can go to zero or to fifty in an hour on expiry day.
+    mistake: Learning options by trading expiry day.
+  - title: Liquidity matters in options
+    lesson: Trade only strikes with tight bid-ask spreads. Wide spreads are a hidden loss on every trade.
+    example: Paying ten and selling at nine on a wide spread costs ten percent before the stock moves.
+    mistake: Trading illiquid strikes because they look cheap.
+  - title: Hedging with a put
+    lesson: A put on your portfolio is insurance. It costs money, and it is worth it in a crash.
+    example: A portfolio put that costs two percent a year can save twenty percent in a bad month.
+    mistake: Never hedging because insurance feels like waste.
+  - title: Why strike selection matters
+    lesson: At-the-money strikes move with the stock. Far out-of-the-money strikes mostly decay.
+    example: An in-the-money call behaves like the stock. A deep out-of-the-money call behaves like a lottery ticket.
+    mistake: Buying the cheapest strike because more lots feel better.
+  - title: Options Greeks in one line each
+    lesson: Delta is direction, theta is time, vega is volatility, gamma is how fast delta changes.
+    example: Knowing just those four words explains most of what your option is doing.
+    mistake: Ignoring the Greeks entirely.
+intraday:
+  - title: The first fifteen minutes
+    lesson: The opening range sets the day's battlefield. Mark its high and low and trade the break or the reversal.
+    example: A break above the fifteen-minute high with volume often runs for the next hour.
+    mistake: Trading inside the first candle before the range is even formed.
+  - title: Why I do not trade lunch
+    lesson: Midday volume dries up and moves fail. The best trades come in the first and last hour.
+    example: Most breakouts between twelve and two fade back into the range.
+    mistake: Forcing trades during the dead zone.
+  - title: Pre-market preparation
+    lesson: Watchlist, key levels and a bias for each name should be ready before the bell.
+    example: Three names, two levels each, one plan per name. Nothing else.
+    mistake: Scanning for ideas after the market opens.
+  - title: How many trades a day is enough
+    lesson: Two or three quality setups a day beats fifteen impulse trades. Fewer decisions, better decisions.
+    example: The most consistent day traders average under four trades a day.
+    mistake: Trading every wiggle.
+  - title: The VWAP as a referee
+    lesson: Above VWAP buyers are in control, below it sellers are. Trade with the referee, not against.
+    example: A pullback to VWAP in an uptrend that holds is a clean long.
+    mistake: Buying below VWAP in a downtrend because it looks cheap.
+  - title: Gap and go versus gap fade
+    lesson: A gap on strong news and volume continues. A gap on nothing usually fills.
+    example: A gap up on earnings holding the open is a go. A gap up on a rumor drifting lower is a fade.
+    mistake: Buying every gap up.
+  - title: Set a hard stop time
+    lesson: Decide when you stop trading for the day. Late trades are usually tired trades.
+    example: If the plan says done by noon, you are done by noon even if you are up or down.
+    mistake: Trading into the close to make up a loss.
+  - title: Scaling out correctly
+    lesson: Take partial profit at the first target and trail the rest behind structure.
+    example: Sell half at two to one, move the stop to break even, let the rest run.
+    mistake: All out at the first sign of profit.
+  - title: The chop filter
+    lesson: If price crosses your level three times in ten minutes, the level is not working. Step aside.
+    example: Three whipsaws around the opening high means no trend today.
+    mistake: Taking the fourth breakout because "this one is real".
+  - title: One time frame for entry, one for context
+    lesson: Use the five-minute for context and the one-minute for the trigger. Never switch mid-trade.
+    example: The five-minute shows the trend, the one-minute shows the pullback ending.
+    mistake: Flipping time frames until one agrees with you.
+  - title: Latency of news
+    lesson: By the time you read the headline, the move is done. Trade the reaction, not the news.
+    example: The second move after the initial spike is the one retail traders can actually catch.
+    mistake: Chasing the spike.
+  - title: Closing routine for day traders
+    lesson: Screenshot every trade, write one line on what you did right and wrong, and close the platform.
+    example: Ten minutes at the close saves hours of repeating the same mistake.
+    mistake: Closing the laptop and forgetting the day.
+swing:
+  - title: Why swing trading suits people with jobs
+    lesson: Decisions happen once a day after the close. No screen watching, no stress during work.
+    example: Set orders in the evening, check once in the morning, done.
+    mistake: Checking the position every ten minutes.
+  - title: The pullback to the twenty
+    lesson: In a strong trend, a pullback to the twenty-day average with a tight candle is a low-risk entry.
+    example: Stock makes a new high, drifts to the twenty-day average, prints a small candle, resumes.
+    mistake: Buying the new high itself instead of waiting for the pullback.
+  - title: How long to hold a swing
+    lesson: Hold while the structure holds. Exit when the last higher low breaks, not on a calendar.
+    example: A winner can last three days or three weeks. The chart decides, not you.
+    mistake: Selling because it has been "long enough".
+  - title: Relative strength picks the leader
+    lesson: When the market dips, the stocks that refuse to fall are the ones that lead the next rally.
+    example: A stock flat on a red market day is showing hidden buyers.
+    mistake: Buying the weakest stock because it is cheapest.
+  - title: Trailing stops for trends
+    lesson: Trail the stop below each new higher low. You never sell the top, but you never give it all back.
+    example: Each pullback low becomes the new stop. The trend pays you until it ends.
+    mistake: Using a fixed profit target in a trending market.
+  - title: Earnings risk for swing traders
+    lesson: Decide before entry whether you hold through earnings. If not, exit the day before.
+    example: A twenty percent gap against you erases months of small wins.
+    mistake: Being surprised by an earnings date.
+  - title: The weekly chart filter
+    lesson: Only swing long stocks whose weekly chart is above a rising average. It removes most bad trades.
+    example: Weekly uptrend plus daily pullback is the highest-probability combination.
+    mistake: Trading daily setups in weekly downtrends.
+  - title: Sector rotation in simple terms
+    lesson: Money moves between sectors. Find the sector with the most new highs and trade its leaders.
+    example: When banks lead, the strongest banks give the cleanest swings.
+    mistake: Ignoring what the sector is doing.
+  - title: How many swing positions at once
+    lesson: Three to five. Enough to spread risk, few enough to actually manage.
+    example: Five positions at one percent risk each is five percent total exposure, manageable.
+    mistake: Holding fifteen positions and tracking none properly.
+  - title: Buy the tight base, not the loose one
+    lesson: A base with small candles and low volume is coiling. A wide, messy base is unresolved.
+    example: Two weeks of tiny ranges near a high usually resolve upward.
+    mistake: Buying inside a wide, choppy consolidation.
+  - title: Partial profits on swings
+    lesson: Take a third at two to one, another third at the next resistance, trail the last third.
+    example: Locking in some profit makes holding the rest psychologically easy.
+    mistake: All or nothing exits.
+  - title: The end-of-day routine for swing traders
+    lesson: Scan for setups, update stops, set alerts. Thirty minutes a day is enough.
+    example: A consistent evening routine finds the setups before they run.
+    mistake: Scanning randomly during the trading day.
+investing:
+  - title: Compounding in one example
+    lesson: Money invested at twelve percent doubles roughly every six years. Time matters more than timing.
+    example: Ten thousand becomes twenty in six years, forty in twelve, eighty in eighteen.
+    mistake: Waiting for the perfect entry and missing years of compounding.
+  - title: Index funds versus stock picking
+    lesson: Most professionals fail to beat the index over ten years. Own the index as your base.
+    example: A simple index fund plus a small satellite of hand-picked stocks is a strong structure.
+    mistake: Going all in on individual stocks with no core.
+  - title: What a P/E ratio tells you
+    lesson: Price divided by earnings shows how many years of profit you are paying for. Compare within a sector.
+    example: A company at fifteen times earnings is cheaper than its peer at forty, if growth is similar.
+    mistake: Comparing a bank's P/E to a software company's.
+  - title: Dollar-cost averaging explained
+    lesson: Investing a fixed amount every month buys more when prices are low and less when high.
+    example: A monthly plan through a crash ends up with a lower average cost than a lump sum at the top.
+    mistake: Stopping contributions during a downturn.
+  - title: Dividends are not free money
+    lesson: A dividend is paid out of the share price. Judge the business, not the payout.
+    example: A stock paying a ten percent dividend while its price falls twenty percent is a losing investment.
+    mistake: Buying only for yield.
+  - title: How to read a balance sheet quickly
+    lesson: Cash, debt and cash flow. Growing cash, shrinking debt and positive cash flow is a healthy company.
+    example: A company growing profit but burning cash every year is a warning sign.
+    mistake: Reading only the headline profit number.
+  - title: Why volatility is not risk for investors
+    lesson: Short-term price swings are noise. Permanent loss of capital is the real risk.
+    example: A great business down thirty percent in a panic is an opportunity, not a risk.
+    mistake: Selling a strong company because the price dropped.
+  - title: The emergency fund comes first
+    lesson: Six months of expenses in cash before a single rupee goes into the market.
+    example: Investors without a cushion are forced to sell at the bottom.
+    mistake: Investing money you may need next month.
+  - title: Rebalancing once a year
+    lesson: Sell some of what grew, buy some of what lagged. It forces you to buy low and sell high.
+    example: If stocks grow from sixty to seventy percent of the portfolio, trim back to sixty.
+    mistake: Never rebalancing and ending up with all your money in one winner.
+  - title: Moats in plain language
+    lesson: A moat is what stops competitors from stealing the profit. Brands, networks, switching costs.
+    example: A company you cannot leave without pain has a moat.
+    mistake: Buying a business anyone could copy next year.
+  - title: Time in the market beats timing
+    lesson: Missing the ten best days over twenty years cuts returns in half. Stay invested.
+    example: The best days usually come right after the worst days.
+    mistake: Sitting in cash waiting for clarity.
+  - title: How much of your income to invest
+    lesson: Start with what you can automate and never miss, then raise it every time your income rises.
+    example: Ten percent now, fifteen after the next raise, twenty after the one after.
+    mistake: Waiting to earn more before starting.
+mistakes:
+  - title: Trading without a stop loss
+    lesson: No stop means no defined risk, which means one trade can end your account.
+    example: The trader who "just watches it" is the one who holds a ninety percent loser.
+    mistake: Mental stops that never get executed.
+  - title: Averaging down on losers
+    lesson: Adding to a losing position turns a small mistake into a big one.
+    example: Buying more at every dip on the way down is how a five percent loss becomes fifty.
+    mistake: Confusing averaging down with a plan.
+  - title: Overtrading
+    lesson: More trades means more commissions, more mistakes and more fatigue. Fewer, better.
+    example: The trader who takes twenty trades a day pays more in costs than they can earn.
+    mistake: Believing activity equals productivity.
+  - title: Trading on tips
+    lesson: If you did not find the trade, you cannot manage it. You do not know when the tipper exits.
+    example: The person who gave the tip sold while you were still hoping.
+    mistake: Following anonymous calls on messaging groups.
+  - title: Too much leverage too early
+    lesson: Leverage magnifies mistakes exactly when you make the most of them.
+    example: Five times leverage turns a normal ten percent dip into a fifty percent loss.
+    mistake: Using full margin in the first month.
+  - title: Switching strategies every week
+    lesson: No strategy can prove itself in a week. Give any rule one hundred trades before judging.
+    example: A trader who changes plans weekly never learns any of them.
+    mistake: Quitting a good strategy during a normal losing streak.
+  - title: Not knowing your numbers
+    lesson: If you cannot state your win rate, average win and average loss, you are guessing.
+    example: A trader who knows their expectancy sleeps well during drawdowns.
+    mistake: Never opening the journal.
+  - title: Risking rent money
+    lesson: Money you cannot afford to lose makes you trade scared. Scared traders lose.
+    example: Trading with next month's rent leads straight to emotional decisions.
+    mistake: Funding the account from essentials.
+  - title: Chasing the move
+    lesson: If you are late, you are the liquidity for the early traders. Wait for the next setup.
+    example: Buying a stock up eight percent on the day is buying someone else's exit.
+    mistake: Entering because the candle is big and green.
+  - title: Ignoring the trend
+    lesson: Fighting the trend is expensive. Shorting strength and buying weakness feels smart and costs a lot.
+    example: Picking tops in a rally has ended more accounts than any crash.
+    mistake: Trying to be the first to call the reversal.
+  - title: Taking profits too early and losses too late
+    lesson: The most common mistake in trading, and the exact opposite of what math needs.
+    example: Small wins and big losses means you can win seventy percent of trades and still lose money.
+    mistake: Letting fear and hope manage your exits.
+  - title: Not treating it like a business
+    lesson: No plan, no records, no review. A business run that way fails, and so does a trading account.
+    example: Successful traders have a written plan, a daily routine and monthly reports.
+    mistake: Treating trading as a hobby that should pay.
+history:
+  - title: The lesson of 2008
+    lesson: Leverage plus complacency ends badly. The people who survived had cash and small positions.
+    example: Investors who kept buying through 2009 recovered fully within a few years.
+    mistake: Assuming that what has always gone up cannot fall.
+  - title: The dot-com bubble in one lesson
+    lesson: Price is not value. Companies with no profit traded at hundreds of times revenue and then went to zero.
+    example: Even great companies fell over eighty percent from the top before recovering years later.
+    mistake: Buying a story instead of a business.
+  - title: Black Monday 1987
+    lesson: The market can fall twenty percent in a day. Your risk plan must assume it can happen.
+    example: Traders without stops or hedges lost more in a day than in the previous year.
+    mistake: Sizing positions as if extreme days never happen.
+  - title: The 2020 crash and recovery
+    lesson: The fastest crash was followed by the fastest recovery. Panic selling at the bottom was the real loss.
+    example: The market fell over thirty percent in weeks and made new highs within months.
+    mistake: Waiting for "clarity" that arrives after the recovery.
+  - title: Tulip mania
+    lesson: When an asset's price is driven only by the belief that someone will pay more, it ends.
+    example: A single bulb once cost more than a house, until suddenly nobody wanted to be the last buyer.
+    mistake: Buying because prices are rising, not because of value.
+  - title: The Nifty in 2008 versus 2020
+    lesson: Different causes, same pattern. Fear peaks, volume climaxes, and the recovery starts when it feels hopeless.
+    example: Both bottoms happened when the news was at its worst.
+    mistake: Trying to wait for good news before buying.
+  - title: Long-Term Capital Management
+    lesson: Genius plus leverage still blows up. Nobel prize winners lost billions in months.
+    example: A model that was right ninety-nine percent of the time died on the one percent.
+    mistake: Trusting a model more than a risk limit.
+  - title: Jesse Livermore's rules still work
+    lesson: Trade with the trend, cut losses fast, and add to winners. A century later that is still the edge.
+    example: His biggest fortunes came from sitting tight in winning positions.
+    mistake: Ignoring rules because they are old.
+  - title: The GameStop lesson
+    lesson: Short squeezes are real, and so is the crash afterward. Being early and being late look identical at the top.
+    example: Buyers at the peak lost most of their money within weeks.
+    mistake: Joining a crowd trade after it has already gone vertical.
+  - title: What every crash has in common
+    lesson: Excess leverage before, panic during, and the strongest returns right after.
+    example: The year following major bottoms has historically been among the best.
+    mistake: Being fully invested with leverage at the top and out of the market at the bottom.
+  - title: The 1929 lesson on margin
+    lesson: Buying on borrowed money works until prices fall, then the broker sells for you at the worst moment.
+    example: Margin calls forced selling that made the crash far worse.
+    mistake: Assuming you will be able to exit before the margin call.
+  - title: Why bubbles keep repeating
+    lesson: Every generation believes this time is different. It is never different, only the asset changes.
+    example: Railways, dot-coms, housing, crypto. Same curve, new name.
+    mistake: Believing the current favourite asset is exempt.
+routine:
+  - title: My morning routine before the open
+    lesson: Review overnight news, mark levels on three names, set alerts, write the plan. Thirty minutes.
+    example: Everything decided before nine fifteen means nothing decided in panic after.
+    mistake: Opening the platform at the bell with no plan.
+  - title: The weekly planning session
+    lesson: Sunday evening, one hour. Review last week's trades, build the watchlist, set the focus.
+    example: One hour on Sunday saves five hours of confusion during the week.
+    mistake: Starting Monday cold.
+  - title: The trading checklist
+    lesson: Five yes-or-no questions before every entry. If any answer is no, there is no trade.
+    example: In the plan, trend aligned, risk defined, target twice the risk, not emotional. Five yeses.
+    mistake: Relying on memory under pressure.
+  - title: Alerts instead of screens
+    lesson: Set price alerts at your levels and do something else. The market will call you.
+    example: An alert at support means you only look when there is something to look at.
+    mistake: Staring at charts for hours waiting.
+  - title: End-of-day journaling in five minutes
+    lesson: Screenshot, one line on execution, one line on emotion. That is the whole entry.
+    example: Five minutes a day gives you a hundred trades of data in a few months.
+    mistake: Planning a detailed journal and never writing it.
+  - title: The monthly report
+    lesson: Once a month, calculate win rate, expectancy and your most expensive mistake.
+    example: Finding that early exits cost more than losses changes what you work on next.
+    mistake: Never measuring, only feeling.
+  - title: Sleep is a trading tool
+    lesson: Tired traders take impulse trades. Protect sleep like you protect capital.
+    example: Most of my worst trades came on days with under six hours of sleep.
+    mistake: Trading after a late night.
+  - title: The no-trade day
+    lesson: One day a week with zero trades keeps you objective and proves you can sit out.
+    example: Watching a full day without clicking rebuilds patience.
+    mistake: Feeling obligated to trade every session.
+  - title: Screen setup that reduces mistakes
+    lesson: One chart, one watchlist, one order window. Everything else is a distraction.
+    example: Closing social media during market hours removes the biggest source of FOMO.
+    mistake: Six monitors and twelve tabs.
+  - title: Habit stacking for traders
+    lesson: Attach the journal to something you already do, like the last coffee of the day.
+    example: Coffee, then journal, every day, and the habit sticks in two weeks.
+    mistake: Relying on motivation.
+  - title: Reviewing winners, not just losers
+    lesson: Study what you did right so you can repeat it on purpose.
+    example: Tagging winning trades shows which setup deserves more size.
+    mistake: Only reviewing the painful trades.
+  - title: Preparing for a losing week in advance
+    lesson: Decide now what you will do after three losses. Written rules beat real-time emotion.
+    example: Three losses means half size for the rest of the week. Decided in advance, no debate.
+    mistake: Deciding how to react while you are reacting.

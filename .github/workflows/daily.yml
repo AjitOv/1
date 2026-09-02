@@ -1,0 +1,51 @@
+name: Daily Shorts
+
+on:
+  schedule:
+    # 20:00 UTC = 01:30 IST. Plans, renders and schedules tomorrow's 44 Shorts.
+    - cron: "0 20 * * *"
+  workflow_dispatch:
+    inputs:
+      date:
+        description: "Date to produce (YYYY-MM-DD or tomorrow)"
+        default: "tomorrow"
+
+jobs:
+  produce:
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    env:
+      HEYGEN_API_KEY: ${{ secrets.HEYGEN_API_KEY }}
+      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      OTD_SECRETS_DIR: secrets
+      OTD_DATA_DIR: data
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install -r requirements.txt
+      - name: Restore YouTube tokens
+        # One base64 tar of the secrets/ folder (client_secret*.json + yt_*.json). See README.
+        run: |
+          mkdir -p secrets
+          echo "${{ secrets.YT_SECRETS_TAR_B64 }}" | base64 -d | tar -xz -C secrets
+      - name: Restore job database
+        uses: actions/cache@v4
+        with:
+          path: data/jobs.db
+          key: jobs-db-${{ github.run_id }}
+          restore-keys: jobs-db-
+      - run: python -m otd_shorts.cli run --date "${{ github.event.inputs.date || 'tomorrow' }}"
+      - name: Save status
+        if: always()
+        run: python -m otd_shorts.cli status --date "${{ github.event.inputs.date || 'tomorrow' }}"
+      - name: Persist refreshed tokens + db
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: run-${{ github.run_id }}
+          path: |
+            data/jobs.db
+            data/scripts_*.csv
+          retention-days: 14
