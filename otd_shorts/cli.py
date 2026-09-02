@@ -164,6 +164,47 @@ def cmd_auth(a, settings: Settings) -> int:
     return 0
 
 
+def cmd_import_token(a, settings: Settings) -> int:
+    from .youtube import import_token, whoami
+    ch = settings.channel(a.channel)
+    import_token(Path(a.path), settings.secrets_dir / ch.oauth_client, settings.secrets_dir / ch.token_file)
+    info = whoami(settings.secrets_dir / ch.token_file)
+    print(f"{ch.key}: token imported, authorised for channel \"{info['title']}\" ({info['id']})")
+    _set_channel_id(ch.key, info["id"])
+    return 0
+
+
+def cmd_whoami(a, settings: Settings) -> int:
+    from .youtube import whoami
+    chans = [settings.channel(a.channel)] if a.channel else settings.channels
+    ok = True
+    for ch in chans:
+        try:
+            info = whoami(settings.secrets_dir / ch.token_file)
+            print(f"{ch.key:<20} -> {info['title']} ({info['id']})")
+            if a.write:
+                _set_channel_id(ch.key, info["id"])
+        except Exception as exc:  # noqa: BLE001
+            ok = False
+            print(f"{ch.key:<20} -> NOT READY: {exc}")
+    return 0 if ok else 1
+
+
+def _set_channel_id(key: str, channel_id: str) -> None:
+    """Write youtube_channel_id for one channel into config/channels.yaml without reformatting it."""
+    from .config import CONFIG_DIR
+    p = CONFIG_DIR / "channels.yaml"
+    lines = p.read_text().splitlines()
+    in_block = False
+    for i, line in enumerate(lines):
+        if line.strip().startswith("- key: "):
+            in_block = line.strip() == f"- key: {key}"
+        elif in_block and line.strip().startswith("youtube_channel_id:"):
+            lines[i] = f'    youtube_channel_id: "{channel_id}"'
+            break
+    p.write_text("\n".join(lines) + "\n")
+
+
 def main(argv: list[str] | None = None) -> int:
     p = argparse.ArgumentParser(prog="otd_shorts")
     sub = p.add_subparsers(dest="cmd", required=True)
@@ -184,6 +225,11 @@ def main(argv: list[str] | None = None) -> int:
     sp = sub.add_parser("run"); common(sp); sp.set_defaults(fn=cmd_run)
     sp = sub.add_parser("status"); common(sp); sp.set_defaults(fn=cmd_status)
     sp = sub.add_parser("auth"); sp.add_argument("channel"); sp.set_defaults(fn=cmd_auth)
+    sp = sub.add_parser("import-token", help="reuse an existing Google OAuth token for a channel")
+    sp.add_argument("channel"); sp.add_argument("path"); sp.set_defaults(fn=cmd_import_token)
+    sp = sub.add_parser("whoami", help="show which YouTube channel each token is authorised for")
+    sp.add_argument("--channel", default=None); sp.add_argument("--write", action="store_true", help="save channel ids into channels.yaml")
+    sp.set_defaults(fn=cmd_whoami)
 
     a = p.parse_args(argv)
     return a.fn(a, load_settings())

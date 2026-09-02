@@ -74,3 +74,50 @@ def upload_short(token_file: Path, video_path: Path, title: str, description: st
     while resp is None:
         _, resp = req.next_chunk()
     return resp["id"]
+
+
+def import_token(src: Path, client_secret: Path | None, token_file: Path) -> None:
+    """Convert an existing Google OAuth credential into our token file.
+    Accepts: google-auth 'authorized_user' JSON, a token.json/credentials JSON with a refresh_token,
+    or a token.pickle written by google-auth. Missing client_id/secret are taken from client_secret."""
+    import json
+    import pickle
+    cid = csec = None
+    if client_secret and client_secret.exists():
+        cs = json.loads(client_secret.read_text())
+        block = cs.get("installed") or cs.get("web") or {}
+        cid, csec = block.get("client_id"), block.get("client_secret")
+    data: dict
+    if src.suffix in (".pickle", ".pkl", ".p"):
+        with open(src, "rb") as f:
+            creds = pickle.load(f)
+        data = {"refresh_token": creds.refresh_token, "client_id": creds.client_id,
+                "client_secret": creds.client_secret, "token": getattr(creds, "token", None),
+                "scopes": list(creds.scopes or SCOPES)}
+    else:
+        raw = json.loads(src.read_text())
+        data = raw.get("credentials", raw)
+    refresh = data.get("refresh_token")
+    if not refresh:
+        raise ValueError(f"{src} has no refresh_token; it cannot be reused without re-authorising")
+    out = {
+        "type": "authorized_user",
+        "client_id": data.get("client_id") or cid,
+        "client_secret": data.get("client_secret") or csec,
+        "refresh_token": refresh,
+        "token": data.get("token") or data.get("access_token"),
+        "scopes": data.get("scopes") or SCOPES,
+        "token_uri": data.get("token_uri", "https://oauth2.googleapis.com/token"),
+    }
+    if not out["client_id"] or not out["client_secret"]:
+        raise ValueError("client_id/client_secret missing: copy that project's client_secret.json into secrets/")
+    token_file.parent.mkdir(parents=True, exist_ok=True)
+    token_file.write_text(json.dumps(out, indent=2))
+
+
+def whoami(token_file: Path) -> dict:
+    """Return {id, title} of the channel a token file is authorised for. Costs 1 quota unit."""
+    yt = _service(token_file)
+    resp = yt.channels().list(part="id,snippet", mine=True).execute()
+    item = resp["items"][0]
+    return {"id": item["id"], "title": item["snippet"]["title"]}

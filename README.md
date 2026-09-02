@@ -67,6 +67,12 @@ python -m pytest -q                                    # tests
 2. For each channel: `python -m otd_shorts.cli auth <channel_key>` and log in with the Google account
    that owns that channel (pick the brand channel if asked). This writes `secrets/yt_<key>.json` and
    prints the channel id; paste it into `youtube_channel_id` in `config/channels.yaml`.
+**Already have a Google Cloud project with the channels authorised?** Copy its `client_secret.json`
+into `secrets/`, then for each channel import the existing token instead of re-authorising:
+`python -m otd_shorts.cli import-token price_action ~/path/to/that/token.json` (JSON or pickle
+credentials with a refresh_token are accepted). `python -m otd_shorts.cli whoami --write` prints
+which YouTube channel each token maps to and saves the ids into `channels.yaml`.
+
 3. **Quota.** One `videos.insert` costs 1,600 units; a new project gets 10,000 units/day = **6
    uploads/day per project**. For 44/day you need one of:
    * a quota extension (Google's *YouTube API Services - Audit and Quota Extension* form), or
