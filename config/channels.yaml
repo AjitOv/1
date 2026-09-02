@@ -17,6 +17,9 @@ defaults:
 
 channels:
   - key: otd_system
+    tts_voice: en-IN-PrabhatNeural
+    theme: {colors: ["#0b1220", "#1d3a6e", "#0b1220"], accent: "#FFD166", text: "#FFFFFF"}
+    broll_query: "stock market trading screen"
     name: OTD System
     pillar: system
     persona: "the coach who explains the OTD System itself: process, rules, routine"
@@ -26,6 +29,9 @@ channels:
     token_file: yt_otd_system.json
     youtube_channel_id: ""
   - key: price_action
+    tts_voice: en-US-ChristopherNeural
+    theme: {colors: ["#101010", "#2a2a2a", "#0d0d0d"], accent: "#00E5A0", text: "#FFFFFF"}
+    broll_query: "candlestick chart"
     name: Price Action Lab
     pillar: price_action
     persona: "a chart reader who talks structure, levels and candles, never indicators"
@@ -34,6 +40,9 @@ channels:
     token_file: yt_price_action.json
     youtube_channel_id: ""
   - key: risk_desk
+    tts_voice: en-GB-RyanNeural
+    theme: {colors: ["#1a0f0f", "#5a1d1d", "#1a0f0f"], accent: "#FF6B6B", text: "#FFFFFF"}
+    broll_query: "city skyline night"
     name: Risk Desk
     pillar: risk
     persona: "a calm risk manager obsessed with position sizing and survival"
@@ -42,6 +51,9 @@ channels:
     token_file: yt_risk_desk.json
     youtube_channel_id: ""
   - key: trader_mind
+    tts_voice: en-US-GuyNeural
+    theme: {colors: ["#0f1a1a", "#1f4d4d", "#0f1a1a"], accent: "#7CE0FF", text: "#FFFFFF"}
+    broll_query: "calm ocean sunrise"
     name: Trader Mind
     pillar: psychology
     persona: "a trading psychology coach who talks about discipline, tilt and habits"
@@ -50,6 +62,9 @@ channels:
     token_file: yt_trader_mind.json
     youtube_channel_id: ""
   - key: options_simplified
+    tts_voice: en-AU-WilliamNeural
+    theme: {colors: ["#141024", "#3b2a7a", "#141024"], accent: "#C3A6FF", text: "#FFFFFF"}
+    broll_query: "abstract geometry"
     name: Options Simplified
     pillar: options
     persona: "a teacher who makes options simple for beginners with plain examples"
@@ -58,6 +73,9 @@ channels:
     token_file: yt_options_simplified.json
     youtube_channel_id: ""
   - key: intraday_edge
+    tts_voice: en-US-EricNeural
+    theme: {colors: ["#0a1f14", "#155c3a", "#0a1f14"], accent: "#5CFF9D", text: "#FFFFFF"}
+    broll_query: "trading floor"
     name: Intraday Edge
     pillar: intraday
     persona: "a day trader who shares opening-range, timing and execution tips"
@@ -66,6 +84,9 @@ channels:
     token_file: yt_intraday_edge.json
     youtube_channel_id: ""
   - key: swing_setups
+    tts_voice: en-CA-LiamNeural
+    theme: {colors: ["#1f1a0a", "#6b5a1a", "#1f1a0a"], accent: "#FFC94D", text: "#FFFFFF"}
+    broll_query: "mountain landscape"
     name: Swing Setups
     pillar: swing
     persona: "a swing trader who holds days to weeks and rides trends patiently"
@@ -74,6 +95,9 @@ channels:
     token_file: yt_swing_setups.json
     youtube_channel_id: ""
   - key: wealth_compounding
+    tts_voice: en-GB-ThomasNeural
+    theme: {colors: ["#0d1b2a", "#1b4a5c", "#0d1b2a"], accent: "#8FE3CF", text: "#FFFFFF"}
+    broll_query: "forest timelapse"
     name: Wealth Compounding
     pillar: investing
     persona: "a long-term investor who talks compounding, valuation and patience"
@@ -82,6 +106,9 @@ channels:
     token_file: yt_wealth_compounding.json
     youtube_channel_id: ""
   - key: beginner_mistakes
+    tts_voice: en-US-RogerNeural
+    theme: {colors: ["#1a1a1a", "#4a1010", "#1a1a1a"], accent: "#FF8A5B", text: "#FFFFFF"}
+    broll_query: "storm clouds"
     name: Beginner Trader Mistakes
     pillar: mistakes
     persona: "a blunt mentor who calls out the mistakes that blow up new accounts"
@@ -90,6 +117,9 @@ channels:
     token_file: yt_beginner_mistakes.json
     youtube_channel_id: ""
   - key: market_lessons
+    tts_voice: en-IE-ConnorNeural
+    theme: {colors: ["#16130d", "#4a3d22", "#16130d"], accent: "#E8C27A", text: "#FFFFFF"}
+    broll_query: "old library"
     name: Market Lessons
     pillar: history
     persona: "a storyteller who pulls timeless lessons from famous market events"
@@ -98,6 +128,9 @@ channels:
     token_file: yt_market_lessons.json
     youtube_channel_id: ""
   - key: trader_routine
+    tts_voice: en-US-BrianNeural
+    theme: {colors: ["#0e1420", "#26415e", "#0e1420"], accent: "#9BD1FF", text: "#FFFFFF"}
+    broll_query: "morning coffee desk"
     name: Trader Routine
     pillar: routine
     persona: "a systematic trader who shares daily routines, checklists and tools"

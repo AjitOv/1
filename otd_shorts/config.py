@@ -33,6 +33,10 @@ class Channel:
     engine: str = "avatar_iv"
     resolution: str = "720p"
     captions: bool = True
+    # local (free) renderer
+    tts_voice: str = "en-IN-PrabhatNeural"
+    theme: dict[str, Any] = field(default_factory=lambda: {"colors": ["#0b1220", "#12315a", "#0b1220"], "accent": "#FFD166", "text": "#FFFFFF"})
+    broll_query: str = ""
 
 
 @dataclass

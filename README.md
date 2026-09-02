@@ -25,6 +25,11 @@ otd_shorts/      planner -> scripts -> renderer (HeyGen or Hedra) -> YouTube sch
      is in `config/channels.yaml` (two channels use the digital twin, the rest use photo looks).
    * `OTD_RENDERER=hedra`: TTS + `hedra-avatar` from a portrait photo per channel
      (`secrets/portraits/<channel_key>.jpg`).
+   * `OTD_RENDERER=local` (**free, no keys**): Edge neural voice (a different one per channel) +
+     word-by-word highlighted captions + animated per-channel gradient, assembled by ffmpeg into
+     1080x1920. Optional: `PEXELS_API_KEY` swaps the gradient for darkened portrait stock b-roll;
+     `OTD_MUSIC_DIR` mixes a music bed at 10%. `OTD_TTS=piper` + `OTD_PIPER_MODEL=<voice.onnx>`
+     makes it fully offline (voices: github.com/rhasspy/piper-voices). No talking head in this mode.
 4. **Upload** (`upload`): each video is uploaded **private with `publishAt`** set to its slot, so
    YouTube releases it on schedule. Title/description carry `#Shorts`, the course link and the
    risk disclaimer. Category: Education.
@@ -80,14 +85,15 @@ Secrets to add in the GitHub repo:
 
 | renderer | per video | per day | per month |
 |---|---|---|---|
+| **local (Edge TTS + ffmpeg, faceless)** | **$0** | **$0** | **$0** |
 | Hedra avatar 540p + MiniMax TTS | ~$1.05 | ~$46 | ~$1,400 |
 | Hedra avatar 720p + MiniMax TTS | ~$2.05 | ~$90 | ~$2,700 |
 | HeyGen API | depends on API plan credits (roughly $1-3 per minute of avatar video) | | |
 | Claude scripts (claude-opus-5, ~1.5k tokens each) | ~$0.02 | ~$1 | ~$30 |
 
-Right now all three connected accounts (HeyGen, Higgsfield, Hedra) are on free plans with **zero
-balance**, so nothing can render until one of them is funded. `plan`, `preview` and `export` work
-without any keys.
+Right now all three connected avatar accounts (HeyGen, Higgsfield, Hedra) are on free plans with
+**zero balance**. The `local` renderer needs none of them: `OTD_RENDERER=local python -m otd_shorts.cli run`
+produces all 44 videos for free (about 20-40 s of CPU each).
 
 ## Risks you should know before turning this on
 
@@ -99,6 +105,9 @@ without any keys.
 * **Financial-content rules.** Scripts never give buy/sell calls on named securities and never
   promise returns; the description carries a risk disclaimer. Keep it that way, especially with
   a $5,999 course link, or expect "misleading claims" strikes.
+* **Faceless + AI voice is the format YouTube scrutinises most.** The local renderer gives every
+  channel its own voice, colours and b-roll query for that reason. Consider recording yourself for
+  the flagship channel and using the free renderer for the other ten.
 * **Avatar disclosure.** YouTube requires the "altered or synthetic content" flag for realistic AI
   avatars. Tick it in Studio (the API does not expose it yet) or expect the label to be applied for you.
 * **Verify Hedra endpoints.** The Hedra client follows the v3 schema (`/v3/files`, `/v3/models/{id}`,

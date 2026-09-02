@@ -17,6 +17,8 @@ jobs:
     env:
       HEYGEN_API_KEY: ${{ secrets.HEYGEN_API_KEY }}
       ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      OTD_RENDERER: ${{ vars.OTD_RENDERER || 'local' }}   # local (free) | heygen | hedra
+      PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
       OTD_SECRETS_DIR: secrets
       OTD_DATA_DIR: data
     steps:
@@ -24,7 +26,9 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
-      - run: pip install -r requirements.txt
+      - run: |
+          pip install -r requirements.txt
+          sudo apt-get update -qq && sudo apt-get install -y -qq fonts-dejavu-core
       - name: Restore YouTube tokens
         # One base64 tar of the secrets/ folder (client_secret*.json + yt_*.json). See README.
         run: |

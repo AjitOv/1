@@ -5,3 +5,5 @@ anthropic>=1.0
 google-api-python-client>=2.120
 google-auth-oauthlib>=1.2
 google-auth-httplib2>=0.2
+edge-tts>=7.0
+imageio-ffmpeg>=0.5

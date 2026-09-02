@@ -70,11 +70,15 @@ def cmd_export(a, settings: Settings) -> int:
 def _render_one(settings: Settings, store: Store, job: Job) -> None:
     """Render one job with the backend named by OTD_RENDERER (heygen, default, or hedra)."""
     import os
-    backend = os.environ.get("OTD_RENDERER", "heygen").lower()
+    backend = (getattr(_render_one, "backend", None) or os.environ.get("OTD_RENDERER", "heygen")).lower()
     ch = settings.channel(job.channel)
     dest = settings.data_dir / "videos" / job.date / f"{job.id}.mp4"
     try:
-        if backend == "hedra":
+        if backend == "local":
+            from .local_render import LocalRenderer, LocalRenderError as RenderError
+            store.update(job.id, status="rendering")
+            LocalRenderer(settings).render(ch, job.script, job.id, dest)
+        elif backend == "hedra":
             from .hedra import Hedra, HedraError as RenderError
             hd = Hedra()
             store.update(job.id, status="rendering")
@@ -97,6 +101,8 @@ def _render_one(settings: Settings, store: Store, job: Job) -> None:
 
 
 def cmd_render(a, settings: Settings) -> int:
+    if a.renderer:
+        _render_one.backend = a.renderer
     store = _store(settings)
     day = _date(a.date).isoformat()
     todo = [j for j in store.for_date(day, channel=a.channel)
@@ -168,6 +174,7 @@ def main(argv: list[str] | None = None) -> int:
         sp.add_argument("--limit", type=int, default=0)
         sp.add_argument("--parallel", type=int, default=4)
         sp.add_argument("--retry", action="store_true", help="also retry failed renders")
+        sp.add_argument("--renderer", default=None, choices=["heygen", "hedra", "local"], help="override OTD_RENDERER")
 
     sp = sub.add_parser("plan"); common(sp); sp.add_argument("--days", type=int, default=1); sp.set_defaults(fn=cmd_plan)
     sp = sub.add_parser("preview"); common(sp); sp.set_defaults(fn=cmd_preview)
